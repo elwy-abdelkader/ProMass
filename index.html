@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protein Molecular Weight Calculator</title>
+</head>
+<body>
+  <h1>Protein Molecular Weight Calculator</h1>
+  <form id="protein-form">
+    <label for="sequence">Amino Acid Sequence:</label><br>
+    <textarea id="sequence" rows="4" cols="50"></textarea><br>
+    <button type="button" onclick="calculateMolecularWeight()">Calculate Molecular Weight</button>
+	<br>
+	<button type="button" onclick="clearseq()">Clear Sequence</button>
+<br>
+<br>
+ <form>
+    <label for="dropdown1"><label style="color: red;">Original Residue1:</label><br>
+    <select id="dropdown1" >
+      <option value="">Select an option</option>
+      <option value="0" selected>None</option>
+      <option value="89.094">A</option>
+      <option value="121.154">C</option>
+	  <option value="133.103">D</option>
+      <option value="147.130">E</option>
+      <option value="165.192">F</option>
+	  <option value="75.067">G</option>
+      <option value="155.157">H</option>
+      <option value="131.175">I</option>
+	  <option value="146.190">K</option>
+      <option value="131.175">L</option>
+      <option value="149.208">M</option>
+	  <option value="132.119">N</option>
+      <option value="115.132">P</option>
+      <option value="146.146">Q</option>
+	  <option value="174.204">R</option>
+      <option value="105.093">S</option>
+      <option value="119.120">T</option>
+	  <option value="117.148">V</option>
+      <option value="204.229">W</option>
+      <option value="181.191">Y</option>
+    </select>
+  <br>
+    <label for="dropdown2"><label style="color: green;">Mutant Residue1:</label><br>
+    <select id="dropdown2" >
+      <option value="">Select an option</option>
+      <option value="0" selected>None</option>
+      <option value="89.094">A</option>
+      <option value="121.154">C</option>
+	  <option value="133.103">D</option>
+      <option value="147.130">E</option>
+      <option value="165.192">F</option>
+	  <option value="75.067">G</option>
+      <option value="155.157">H</option>
+      <option value="131.175">I</option>
+	  <option value="146.190">K</option>
+      <option value="131.175">L</option>
+      <option value="149.208">M</option>
+	  <option value="132.119">N</option>
+      <option value="115.132">P</option>
+      <option value="146.146">Q</option>
+	  <option value="174.204">R</option>
+      <option value="105.093">S</option>
+      <option value="119.120">T</option>
+	  <option value="117.148">V</option>
+      <option value="204.229">W</option>
+      <option value="181.191">Y</option>
+	  <option value="205.085">AzaTryptophan(AzaW)</option>
+	  <option value="201.173">DiFluoroPhenylalanine(F2F)</option>
+	  <option value="217.172">DiFluoroTyrosine(F2Y)</option>
+	  <option value="235.615">DiFluoroChloroPhenylalanine(F2ClF)</option>
+	  <option value="222.219">FluoroTryptophan(FW)</option>
+	  <option value="255.144">PentaFluoroPhenylalanine(F5F)</option>
+	  <option value="233.190">TriFluoromethylPhenylalanine(CF3F)</option>
+	  <option value="249.189">TriFluoromethylTyrosine(CF3Y)</option>
+	</select>
+	<br>
+	<br>
+	<label for="dropdown3"><label style="color: red;">Original Residue2:</label><br>
+    <select id="dropdown3" >
+      <option value="">Select an option</option>
+      <option value="0" selected>None</option>
+      <option value="89.094">A</option>
+      <option value="121.154">C</option>
+	  <option value="133.103">D</option>
+      <option value="147.130">E</option>
+      <option value="165.192">F</option>
+	  <option value="75.067">G</option>
+      <option value="155.157">H</option>
+      <option value="131.175">I</option>
+	  <option value="146.190">K</option>
+      <option value="131.175">L</option>
+      <option value="149.208">M</option>
+	  <option value="132.119">N</option>
+      <option value="115.132">P</option>
+      <option value="146.146">Q</option>
+	  <option value="174.204">R</option>
+      <option value="105.093">S</option>
+      <option value="119.120">T</option>
+	  <option value="117.148">V</option>
+      <option value="204.229">W</option>
+      <option value="181.191">Y</option>
+    </select>
+	<br>
+    <label for="dropdown4"><label style="color: green;">Mutant Residue2:</label><br>
+    <select id="dropdown4" >
+      <option value="">Select an option</option>
+      <option value="0" selected>None</option>
+      <option value="89.094">A</option>
+      <option value="121.154">C</option>
+	  <option value="133.103">D</option>
+      <option value="147.130">E</option>
+      <option value="165.192">F</option>
+	  <option value="75.067">G</option>
+      <option value="155.157">H</option>
+      <option value="131.175">I</option>
+	  <option value="146.190">K</option>
+      <option value="131.175">L</option>
+      <option value="149.208">M</option>
+	  <option value="132.119">N</option>
+      <option value="115.132">P</option>
+      <option value="146.146">Q</option>
+	  <option value="174.204">R</option>
+      <option value="105.093">S</option>
+      <option value="119.120">T</option>
+	  <option value="117.148">V</option>
+      <option value="204.229">W</option>
+      <option value="181.191">Y</option>
+	  <option value="205.085">AzaTryptophan(AzaW)</option>
+	  <option value="201.173">DiFluoroPhenylalanine(F2F)</option>
+	  <option value="217.172">DiFluoroTyrosine(F2Y)</option>
+    </select>
+	
+  </form> 
+  <br>
+  
+  <br>
+  <div id="result"></div>
+  <script>
+    const aminoAcidMasses = {
+      'A': 71.079,
+      'C': 103.139,
+      'D': 115.088,
+      'E': 129.115,
+      'F': 147.177,
+      'G': 57.052,
+      'H': 137.142,
+      'I': 113.16,
+      'K': 128.175,
+      'L': 113.16,
+      'M': 131.193,
+      'N': 114.104,
+      'P': 97.117,
+      'Q': 128.131,
+      'R': 156.189,
+      'S': 87.078,
+      'T': 101.105,
+      'V': 99.133,
+      'W': 186.214,
+      'Y': 163.176
+    };
+
+    function selectValue1() {
+      
+	
+    }
+	
+	
+	function calculateMolecularWeight() {
+      const sequence = document.getElementById('sequence').value;
+	  
+	  
+	  var dropdown1 = document.getElementById("dropdown1");
+      var NAA1 = dropdown1.options[dropdown1.selectedIndex].value; NAA1 = parseFloat(NAA1);
+      document.getElementById("selected-value1").innerHTML = "Selected value1: " + NAA1;
+	  
+	  var dropdown2 = document.getElementById("dropdown2");
+      var NAA2 = dropdown2.options[dropdown2.selectedIndex].value; NAA2 = parseFloat(NAA2);
+      document.getElementById("selected-value2").innerHTML = "Selected value2: " + NAA2;
+	  
+	  var dropdown1 = document.getElementById("dropdown3");
+      var NAA3 = dropdown3.options[dropdown3.selectedIndex].value; NAA3 = parseFloat(NAA3);
+      document.getElementById("selected-value3").innerHTML = "Selected value3: " + NAA3;
+	  
+	  var dropdown2 = document.getElementById("dropdown4");
+      var NAA4 = dropdown4.options[dropdown4.selectedIndex].value; NAA4 = parseFloat(NAA4);
+      document.getElementById("selected-value4").innerHTML = "Selected value4: " + NAA4;
+	  
+	  
+      let molecularWeightint = 18.015;
+      for (const aminoAcid of sequence) {
+        if (!aminoAcidMasses.hasOwnProperty(aminoAcid)) {
+          document.getElementById('result').innerHTML = `Error: Invalid amino acid "${aminoAcid}"`;
+          return;
+        }
+        molecularWeightint += aminoAcidMasses[aminoAcid]; 
+      }
+	  molecularWeight = molecularWeightint - NAA1 + NAA2 - NAA3 + NAA4;
+		if (molecularWeightint > 18.015) {
+		document.getElementById('result').innerHTML = `Molecular weight: ${molecularWeight.toFixed(2)} Da` ;		
+
+		} else {
+		document.getElementById('result').innerHTML = `Molecular weight: 0.00 Da`;
+		}
+		
+      
+    }
+  </script>
+  
+    <p id="selected-value1">Selected value1:</p>
+	  <p id="selected-value2">Selected value2:</p>
+	    <p id="selected-value3">Selected value3:</p>
+	  <p id="selected-value4">Selected value4:</p>
+  
+  	<script>
+    function clearseq() {
+      document.getElementById("sequence").value = "";
+	  document.getElementById("result").innerHTML = "";
+    }
+	</script>
+</body>
+</html>
