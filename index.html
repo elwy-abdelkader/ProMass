@@ -130,6 +130,7 @@
 	  <option value="217.172">DiFluoroTyrosine(F2Y)</option>
     </select>
 	
+	
   </form> 
   <br>
   
@@ -159,31 +160,27 @@
       'Y': 163.176
     };
 
-    function selectValue1() {
-      
-	
-    }
-	
-	
+
+		
 	function calculateMolecularWeight() {
       const sequence = document.getElementById('sequence').value;
 	  
 	  
 	  var dropdown1 = document.getElementById("dropdown1");
       var NAA1 = dropdown1.options[dropdown1.selectedIndex].value; NAA1 = parseFloat(NAA1);
-      document.getElementById("selected-value1").innerHTML = "Selected value1: " + NAA1;
+
 	  
 	  var dropdown2 = document.getElementById("dropdown2");
       var NAA2 = dropdown2.options[dropdown2.selectedIndex].value; NAA2 = parseFloat(NAA2);
-      document.getElementById("selected-value2").innerHTML = "Selected value2: " + NAA2;
+
 	  
 	  var dropdown1 = document.getElementById("dropdown3");
       var NAA3 = dropdown3.options[dropdown3.selectedIndex].value; NAA3 = parseFloat(NAA3);
-      document.getElementById("selected-value3").innerHTML = "Selected value3: " + NAA3;
+
 	  
 	  var dropdown2 = document.getElementById("dropdown4");
       var NAA4 = dropdown4.options[dropdown4.selectedIndex].value; NAA4 = parseFloat(NAA4);
-      document.getElementById("selected-value4").innerHTML = "Selected value4: " + NAA4;
+
 	  
 	  
       let molecularWeightint = 18.015;
@@ -205,8 +202,7 @@
       
     }
   </script>
-  
-      
+    
   	<script>
     function clearseq() {
       document.getElementById("sequence").value = "";
